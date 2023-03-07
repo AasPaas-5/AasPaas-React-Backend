@@ -1,0 +1,104 @@
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: black;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+body {
+    background: linear-gradient(180deg, #C6EAFF 0%, #9ED5F3 23.69%, #51A6F4 81.5%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Inter', sans-serif;
+}
+
+.content {
+    background-color: #FFFFFF;
+    padding: 20px 40px;
+    width: 72%;
+    min-width: 1080px;
+    margin: auto;
+    margin-top: 60px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 22px;
+    box-shadow: 6px 6px rgba(59, 58, 58, 0.32);
+}
+
+.content h1 {
+    margin: 10px;
+    margin-bottom: 20px;
+}
+
+.content-category {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 20px;
+    grid-column-gap: 140px;
+
+}
+
+.category {
+    background-color: #D2E3F2;
+    height: 50px;
+    text-align: left;
+    padding: 10px;
+    font-size: 22px;
+    font-weight: 500;
+    border-radius: 16px;
+    border: 2px solid rgba(190, 190, 190, 0.7)
+}
+
+.category span {
+    position: relative;
+    bottom: 7%;
+    color: black
+}
+
+.category img {
+    width: 42px;
+    margin-top: -7px;
+}
+
+#mobile {
+    position: relative;
+    bottom: 6px;
+    right: 20px;
+}
+
+#appliance {
+    position: relative;
+    bottom: 2px;
+    right: 22px;
+}
+
+#mobilephone {
+    width: 90px;
+    margin-top: -12px;
+    margin-left: -25px;
+}
+
+#appliances {
+    width: 90px;
+    margin-top: -10px;
+    margin-left: -25px;
+}
+
+#miscellaneous {
+    position: relative;
+    left: 65%;
+}
+
+#stationary {
+    margin-top: -11px;
+}

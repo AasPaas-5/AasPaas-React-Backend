@@ -1,0 +1,47 @@
+<%- include ("../partials/boilerplate") %>
+  <%- include ("../partials/navbar") %>
+    <%- include('../partials/categories') %>
+      <%- include('../partials/flash') %>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Alata&family=Amaranth&family=Germania+One&family=Inter:wght@300&family=Montserrat&family=Open+Sans:wght@300&family=Poppins:wght@200;300;400&family=Roboto:ital,wght@1,100&display=swap"
+          rel="stylesheet" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Alata&family=Amaranth&family=Germania+One&family=Inter:wght@300&family=Open+Sans:wght@300&family=Poppins:wght@200;300;400&family=Roboto:ital,wght@1,100&display=swap"
+          rel="stylesheet" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Amaranth&family=Germania+One&family=Inter:wght@300&family=Open+Sans:wght@300&family=Poppins:wght@200;300;400&family=Roboto:ital,wght@1,100&display=swap"
+          rel="stylesheet" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Germania+One&family=Inter:wght@300&family=Open+Sans:wght@300&family=Poppins:wght@200;300;400&family=Roboto:ital,wght@1,100&display=swap"
+          rel="stylesheet" />
+        <link rel="stylesheet" href="/stylesheets/topDeals.css" />
+        <div class="freshers">
+          <div class="topimage"></div>
+        </div>
+        <div class="whiteback">
+          <div class="freshers1">
+            <div class="otherdeals">
+              <div class="product3">
+                <% for (let product of products){%>
+                  <div class="prodtrend">
+                    <a href="/products?id=<%=product._id%>"><img src="<%=product.images[0].sizing%>" /></a>
+                    <div onclick="window.location.href = '/products?id=<%=product._id%>'" class="prod1">
+                      <div class="title"><a href="/products?id=<%=product._id%>">
+                          <%=product.title%>
+                        </a></div>
+                      <div class="pricebox">
+                        <a href="/products?id=<%=product._id%>" class="price">₹<%=product.price%></a>
+                      </div>
+                    </div>
+                  </div>
+                  <% }%>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="botttom">
+          <div class="bottomBG"></div>
+        </div>
+        <%- include ("../partials/footer_long") %>

@@ -1,0 +1,113 @@
+<%- include ("../partials/boilerplate") %>
+  <%- include ("../partials/navbar") %>
+    <%- include('../partials/flash') %>
+      <link rel="stylesheet" href="/stylesheets/profile.css" />
+      <div id="youraccount">
+        <div class="box">
+          <div class="heading">Your account</div>
+          <div class="sections">
+            <a href="/users/logout" class="cards">
+              <div class="all-card">
+                <img
+                  src="https://res.cloudinary.com/sairev/image/upload/v1665898376/SecondSwap/Files/logout_macfk7_l7xo7b.png"
+                  id="logoutimg" />
+
+                <ul id="desc-logout">
+                  <li class="desc-title">Logout</li>
+                  <br />
+                  <li id="logout">Click here to Logout</li>
+                </ul>
+              </div>
+            </a>
+            <a href="" class="cards">
+              <div class="all-card">
+                <img
+                  src="https://res.cloudinary.com/sairev/image/upload/v1665898416/SecondSwap/Files/Profile%20Images/locked_products_s4ffly_qquwfz.png"
+                  class="lockedimg" />
+
+                <ul id="desc-locked">
+                  <li class="desc-title">Locked Products</li>
+                  <br />
+                  <li id="locked">
+                    View currently locked <br />
+                    products you will buy
+                  </li>
+                </ul>
+              </div>
+            </a>
+            <a href="/users/contact" class="cards">
+              <div class="all-card">
+                <img
+                  src="https://res.cloudinary.com/sairev/image/upload/v1665898416/SecondSwap/Files/Profile%20Images/contact_us_fpi3py_dpw3ty.png"
+                  class="contactimg" />
+                <ul id="desc-contact">
+                  <li class="desc-title">Contact Us</li>
+                  <br />
+                  <li id="contact">
+                    Contact us for feedback, <br />
+                    queries, or reports
+                  </li>
+                </ul>
+              </div>
+            </a>
+            <a href="/users/edit" class="cards">
+              <div class="all-card">
+                <img
+                  src="https://res.cloudinary.com/sairev/image/upload/v1665898416/SecondSwap/Files/Profile%20Images/edit_info_d4n9ze_idrhea.png"
+                  id="editimg" />
+                <ul id="desc-edit">
+                  <li class="desc-title">Edit Info</li>
+                  <br />
+                  <li id="info">Change account info</li>
+                </ul>
+              </div>
+            </a>
+            <a href="/users/wishlist" class="cards">
+              <div class="all-card">
+                <img src="https://res.cloudinary.com/aaspaas/image/upload/v1667571734/ProfilePage/wishlist_arfupx.png"
+                  class="sellimg" />
+                <ul id="desc-sell">
+                  <li class="desc-title">Wishlist</li>
+                  <br />
+                  <li id="sold">View products in your Wishlist</li>
+                </ul>
+              </div>
+            </a>
+            <a href="/users/delete" class="cards">
+              <div class="all-card">
+                <img
+                  src="https://res.cloudinary.com/sairev/image/upload/v1665898416/SecondSwap/Files/Profile%20Images/delete_account_jw0edu_mm63ua.png"
+                  id="deleteimg" />
+                <ul id="desc-delete">
+                  <li class="desc-title">Delete Account</li>
+                  <br />
+                  <li id="delete">Delete your account and all info</li>
+                </ul>
+              </div>
+            </a>
+          </div>
+
+          <hr />
+          <div class="info">Account Information</div>
+          <div class="information">
+            <div class="infobox">
+              <% if(currentUser) {%>
+                <div>Name: <%=currentUser.name%>
+                </div>
+                <div>Email: <%=currentUser.email%>
+                </div>
+                <div>Branch: <%=currentUser.branch%>
+                </div>
+                <div>
+                  Hostel Info: Room number <%=currentUser.room%>
+                    <%=currentUser.hostel%>
+                </div>
+                <div>Phone no: <%=currentUser.contact%>
+                </div>
+                <% } %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="height: 100px"></div>
+      <%- include ("../partials/footer_short") %>

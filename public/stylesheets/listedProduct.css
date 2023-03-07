@@ -1,0 +1,188 @@
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+body {
+    background: linear-gradient(180deg, #C6EAFF 0%, #9ED5F3 23.69%, #51A6F4 81.5%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Inter', sans-serif;
+}
+
+.content {
+    background-color: #DCEAF8;
+    box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.12);
+    padding: 20px;
+    border-radius: 16px;
+    min-width: 1440px;
+    margin: auto 30px;
+    margin-top: 20px;
+
+}
+
+.content h1 {
+    margin-left: 20px;
+    font-family: 'Alata', sans-serif;
+
+}
+
+.your-orders {
+    display: grid;
+    grid-template-columns: 225px 900px 200px;
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px;
+    height: 260px;
+}
+
+.product-img {
+    background: #FFFFFF;
+    border: 1px solid #BEBEBE;
+    border-radius: 20px 20px 0px 0px;
+    margin: 20px;
+    margin-top: -5px;
+    height: 180px;
+}
+
+.product-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px 20px 0px 0px;
+    object-fit: cover;
+}
+
+.product-desc h2 {
+    display: flex;
+
+}
+
+.product-desc h2 p {
+    font-size: 20px;
+    margin-left: 35%;
+}
+
+.product-desc p {
+    font-size: 18px;
+}
+
+
+.product-status {
+    text-align: center;
+}
+
+.product-status p {
+    font-weight: 600;
+    font-size: 18px;
+
+}
+
+
+.prod1 {
+    height: 50px;
+    background: #FFFFFF;
+    border-width: 1.5px 1px 1px 1px;
+    border-style: solid;
+    border-color: #BEBEBE;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3), inset 0px 2px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 20px 20px;
+    text-align: center;
+}
+
+.prod1 div a {
+    text-decoration: none;
+    color: black;
+}
+
+.title {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.pricebox {
+    width: 70px;
+    margin: auto;
+    background: #BCDBF8;
+    border-radius: 12px;
+
+}
+
+.price {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.btn-blue {
+    text-align: center;
+    color: white;
+    background-color: #52A7F5;
+    border: rgba(155, 155, 155, 0.7) 3px solid;
+
+    padding: 5px;
+    width: 90%;
+    border-radius: 11px;
+    height: 20%;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+
+
+.btn-blue:hover {
+    background-color: #63b1fa;
+}
+
+.btn-red {
+    text-align: center;
+    color: white;
+    background-color: rgba(218, 21, 23, 1);
+    border: rgba(155, 155, 155, 0.7) 2px solid;
+    padding: 5px;
+    width: 90%;
+    border-radius: 11px;
+    height: 20%;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+
+
+.btn-red:hover {
+    background-color: rgb(232, 37, 41);
+}
+
+.btn-green {
+    text-align: center;
+    color: white;
+    background-color: rgba(84, 177, 82, 1);
+    border: rgba(155, 155, 155, 0.7) 2px solid;
+    padding: 5px;
+    width: 60%;
+    border-radius: 11px;
+    height: 20%;
+    margin-top: 30px;
+    margin-left: 50px;
+    font-size: 16px;
+}
+
+.btn-green:hover {
+    background-color: rgb(92, 189, 91);
+}
+
+#price {
+    font-size: 20px;
+    margin-bottom: 0px;
+}

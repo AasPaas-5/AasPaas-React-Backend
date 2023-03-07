@@ -1,0 +1,126 @@
+<%- include ("../partials/boilerplate") %>
+  <%- include ("../partials/navbar") %>
+    <%- include('../partials/categories') %>
+      <%- include('../partials/flash') %>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Germania+One&family=Open+Sans:wght@300&family=Roboto:ital,wght@1,100&display=swap"
+          rel="stylesheet">
+        <link
+          href="https://fonts.googleapis.com/css2?family=Germania+One&family=Inter:wght@300&family=Open+Sans:wght@300&family=Roboto:ital,wght@1,100&display=swap"
+          rel="stylesheet">
+        <link
+          href="https://fonts.googleapis.com/css2?family=Alata&family=Amaranth&family=Germania+One&family=Inter:wght@300&family=Montserrat&family=Open+Sans:wght@300&family=Poppins:wght@200;300;400&family=Roboto:ital,wght@1,100&display=swap"
+          rel="stylesheet" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Alata&family=Amaranth&family=Germania+One&family=Inter:wght@300&family=Open+Sans:wght@300&family=Poppins:wght@200;300;400&family=Roboto:ital,wght@1,100&display=swap"
+          rel="stylesheet" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Amaranth&family=Germania+One&family=Inter:wght@300&family=Open+Sans:wght@300&family=Poppins:wght@200;300;400&family=Roboto:ital,wght@1,100&display=swap"
+          rel="stylesheet" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Germania+One&family=Inter:wght@300&family=Open+Sans:wght@300&family=Poppins:wght@200;300;400&family=Roboto:ital,wght@1,100&display=swap"
+          rel="stylesheet" />
+        <link rel="stylesheet" href="/stylesheets/eachProduct.css" />
+        <div id="product">
+          <div id="back">
+            <a onclick=" window.location.href='/'">←Back</a>
+          </div>
+          <div id="productimg">
+            <div class="prodtrend1">
+              <a href="javascript:void(0)"><img src="<%=foundProduct.images[0].Eachsizing%>" /></a>
+              <div class="prod11">
+                <div class="title1"><a href="javascript:void(0)">
+                    <%=foundProduct.title%>
+                  </a></div>
+                <div class="pricebox1">
+                  <a href="" class="price1">₹<%=foundProduct.price%></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="productdesc">
+            <h1 style="margin-bottom:0px;">
+              <%=foundProduct.title%>
+            </h1>
+            <p style="color : rgb(70,174,120) ; font-weight: 600;margin-top: -18px;">Available</p>
+            <p style="font-family: 'Arial';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 37px;color: #000000;">Price:<b>
+                ₹<%=foundProduct.price%>
+              </b></p>
+            <h3 style="font-family: 'Arial';
+            font-style: normal;
+            font-weight: 700; font-size: 20px;">Seller's Note</h3>
+            <p style="font-family: 'Arial';
+            font-style: normal;
+            font-weight: 400; font-size: 25px;">
+              <%=foundProduct.description%>
+            </p>
+            <div id="Lock">
+              <button onclick="window.location.href = '/products/lockConfirmation?id=<%=foundProduct._id%>'"
+                id="Lockbtn">Lock Product</button>
+              <button onclick="run()" id="Favouritebtn">Add to Wishlist</button>
+            </div>
+            <!-- <div id="tags">
+              <b style="font-family: 'Arial';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 34px;
+                
+                color: #000000;">Tags:</b>
+              <a href="">Drafters ,</a>
+              <a href="">Drawing Kit ,</a>
+              <a href="">ED</a>
+            </div> -->
+            <div id="report" style="
+    margin-top: 25px;">
+              <a href="/products/report?id=<%=foundProduct._id%>">🚩Report Product</a>
+            </div>
+          </div>
+        </div>
+        <div class=" freshers">
+          <div class="topimage">
+            <div class="freshers1">
+              <div class="otherdeals">
+                <div class="trendingheader">
+                  <div class="head"></div>
+                </div>
+                <div class="product3">
+                  <% for (let topDeal of topDeals){%>
+                    <div class="prodtrend">
+                      <a href="/products?id=<%=topDeal._id%>"><img src="<%=topDeal.images[0].sizing%>" /></a>
+                      <div class="prod1">
+                        <div class="title"><a href="/products?id=<%=topDeal._id%>">
+                            <%=topDeal.title%>
+                          </a></div>
+                        <div class="pricebox">
+                          <a href="" class="price">₹<%=topDeal.price%></a>
+                        </div>
+                      </div>
+                    </div>
+                    <% }%>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <%- include ("../partials/footer_long") %>
+          <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+          <script>
+            function run() {
+              Swal.fire({
+                icon: "success",
+                title: "Thanks for Contacting Us",
+                text: "Your issue will be resolved Soon!!",
+                showCloseButton: true
+              }).then(function (result) {
+                if (result.value) {
+                  window.location = '/users/addToWishlist?id=<%=foundProduct._id%>';
+                }
+              })
+            }
+          </script>

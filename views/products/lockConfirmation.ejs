@@ -1,0 +1,75 @@
+<%- include ("../partials/boilerplate") %>
+  <%- include ("../partials/navbar") %>
+    <%- include('../partials/flash') %>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Alata&family=Amaranth&family=Germania+One&family=Inter:wght@300&family=Montserrat&family=Open+Sans:wght@300&family=Poppins:wght@200;300;400&family=Roboto:ital,wght@1,100&display=swap"
+        rel="stylesheet" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Alata&family=Amaranth&family=Germania+One&family=Inter:wght@300&family=Open+Sans:wght@300&family=Poppins:wght@200;300;400&family=Roboto:ital,wght@1,100&display=swap"
+        rel="stylesheet" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Amaranth&family=Germania+One&family=Inter:wght@400&family=Open+Sans:wght@300&family=Poppins:wght@200;300;400;600&family=Roboto:ital,wght@1,100&display=swap"
+        rel="stylesheet" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Germania+One&family=Inter:wght@300&family=Open+Sans:wght@300&family=Poppins:wght@200;300;400&family=Roboto:ital,wght@1,100&display=swap"
+        rel="stylesheet" />
+      <link rel="stylesheet" href="/stylesheets/lockConfirmation.css" />
+      <div class="content">
+        <span><a onclick="javascript:window.history.back()">← Back</a> </span>
+        <h1>Are you sure you wish to lock?</h1>
+        <div class="product">
+          <div onclick="window.location.href = '/products?id=<%=product._id%>'" class="product-img">
+            <a href="/products?id=<%=product._id%>"><img src="<%=product.images[0].sizing%>" /></a>
+            <div class="prod1">
+              <div class="title"><a href="/products?id=<%=product._id%>">
+                  <%=product.title%>
+                </a></div>
+              <div class="pricebox">
+                <a href="/products?id=<%=product._id%>" class="price">₹<%=product.price%></a>
+              </div>
+            </div>
+          </div>
+          <div class="product-desc">
+            <h2>
+              <%=product.title%>
+            </h2>
+            <h5>Sellers Note</h5>
+            <p>
+              <%=product.description%>
+            </p>
+          </div>
+        </div>
+        <form action="/products/lockConfirmation?id=<%=product._id%>" method="POST" class="validated-form"
+          onsubmit="swal()" id="product-lock">
+          <label for="bid">Enter your bid price(₹):</label>
+          <input type="number" name="bid" min="0" id="price"><br>
+          <div style="display: flex; margin-left:370px;">
+            <label for="description" id="desc">Send note to seller:</label><br>
+            <textarea name="description" cols="35" rows="3" id="description"></textarea>
+            <span id="warning">*
+              The seller will review your request based on the price and note you enter here, please refrain from spammy
+              requests </span>
+          </div>
+          <button type="submit" id="submit">Continue →</button>
+        </form>
+      </div>
+      <div style="height:100px"></div>
+      <%- include ("../partials/footer_short") %>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+          crossorigin="anonymous"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+          function swal() {
+            Swal.fire({
+              icon: "success",
+              title: "Locked",
+              text: "<%=product.title%> is Locked Successfully",
+              showConfirmButton: false,
+            });
+
+            // setInterval(function () {
+            //   location.href = "/";
+            // }, 1500);
+          }
+        </script>

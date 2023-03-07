@@ -1,0 +1,50 @@
+<%- include ("../partials/boilerplate") %>
+    <%- include ("../partials/navbar") %>
+        <%- include('../partials/flash') %>
+            <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Alata&family=Amaranth&family=Germania+One&family=Inter:wght@300&family=Montserrat&family=Open+Sans:wght@300&family=Poppins:wght@200;300;400&family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="/stylesheets/order.css" />
+            <div class="content">
+                <h1>Your Orders</h1>
+                <% for (let bid of bids){%>
+                    <div class="your-orders">
+                        <div class="product-img">
+                            <a href="/products?id=<%=bid.product._id%>"><img
+                                    src="<%=bid.product.images[0].sizing%>" /></a>
+                            <div class="prod1">
+                                <div class="title"><a href="/products?id=<%=bid.product._id%>">
+                                        <%=bid.product.title%>
+                                    </a></div>
+                                <div class="pricebox">
+                                    <a href="/products?id=<%=bid.product._id%>" class="price">₹<%=bid.product.price%>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-desc">
+                            <h2>
+                                <%=bid.product.title%>
+                            </h2>
+                            <p><b>Locked on :</b>
+                                <%=bid.lockedOn%><br>Bid price: ₹<%=bid.value%>
+                            </p>
+                            <p>
+                                <%=bid.product.description%>
+                            </p>
+                        </div>
+                        <div class="product-status">
+                            <% if(bid.class=="btn-approved" ) {%>
+                                <button onclick="window.location.href = '/sellerDetails?id=<%=bid.product._id%>'"
+                                    class=<%=bid.class%>>
+                                    <% } else {%>
+                                        <button class=<%=bid.class%>>
+                                            <% } %>
+                                                <%=bid.state%>
+                                        </button>
+                        </div>
+                    </div>
+                    <% }%>
+            </div>
+            <div style="height : 100px;"></div>
+            <%- include ("../partials/footer_short") %>

@@ -1,0 +1,147 @@
+<%- include ("./partials/boilerplate") %>
+  <%- include ("./partials/navbar") %>
+    <%- include('./partials/categories') %>
+      <%- include('./partials/flash') %>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Alata&family=Amaranth&family=Germania+One&family=Inter:wght@300&family=Montserrat&family=Open+Sans:wght@300&family=Poppins:wght@200;300;400&family=Roboto:ital,wght@1,100&display=swap"
+          rel="stylesheet" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Alata&family=Amaranth&family=Germania+One&family=Inter:wght@300&family=Open+Sans:wght@300&family=Poppins:wght@200;300;400&family=Roboto:ital,wght@1,100&display=swap"
+          rel="stylesheet" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Amaranth&family=Germania+One&family=Inter:wght@300&family=Open+Sans:wght@300&family=Poppins:wght@200;300;400&family=Roboto:ital,wght@1,100&display=swap"
+          rel="stylesheet" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Germania+One&family=Inter:wght@300&family=Open+Sans:wght@300&family=Poppins:wght@200;300;400&family=Roboto:ital,wght@1,100&display=swap"
+          rel="stylesheet" />
+        <link rel="stylesheet" href="/stylesheets/home.css" />
+        <div class="slider">
+          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item">
+                <img src="https://res.cloudinary.com/aaspaas/image/upload/v1667397451/sliderpic2_nmgxup.png"
+                  class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item active">
+                <img src="https://res.cloudinary.com/aaspaas/image/upload/v1667397444/sliderpic1_vdkg7r.png"
+                  class="d-block w-100" alt="...">
+              </div>
+
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+        <div class="toprow">
+          <div class="boxes">
+            <div class="trending">
+              <div class="recentlyheader">
+                <div class="head">Recently added</div>
+              </div>
+              <div class="product1">
+                <% for (let recentProd of recentProds){%>
+                  <div class="prodtrend">
+                    <a href="/products?id=<%=recentProd._id%>"><img src="<%=recentProd.images[0].sizing%>" /></a>
+                    <div onclick="window.location.href = '/products?id=<%=recentProd._id%>'" class="prod1">
+                      <div class="title"><a href="/products?id=<%=recentProd._id%>">
+                          <%=recentProd.title%>
+                        </a></div>
+                      <div class="pricebox">
+                        <a href="/products?id=<%=recentProd._id%>" class="price">₹<%=recentProd.price%></a>
+                      </div>
+                    </div>
+                  </div>
+                  <% }%>
+              </div>
+            </div>
+            <div class="trending">
+              <div class="trendingheader">
+                <div class="head">Trending Right Now</div>
+              </div>
+              <div class="product1">
+                <% for (let trending of trendings){%>
+                  <div class="prodtrend">
+                    <a href="/products?id=<%=trending._id%>"><img src="<%=trending.images[0].sizing%>" /></a>
+                    <div onclick="window.location.href = '/products?id=<%=trending._id%>'" class="prod1">
+                      <div class="title"><a href="/products?id=<%=trending._id%>">
+                          <%=trending.title%>
+                        </a></div>
+                      <div class="pricebox">
+                        <a href="/products?id=<%=trending._id%>" class="price">₹<%=trending.price%></a>
+                      </div>
+                    </div>
+                  </div>
+                  <% }%>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="freshers">
+          <div class="topimage">
+            <div class="freshers1">
+              <div class="corner">
+                <div class="recentlyheader">
+                  <div class="head">Fresher's Corner</div>
+                </div>
+                <div class="product2">
+                  <% for (let fresher of freshers){%>
+                    <div class="prodtrend">
+                      <a href="/products?id=<%=fresher._id%>"><img src="<%=fresher.images[0].sizing%>" /></a>
+                      <div onclick="window.location.href = '/products?id=<%=fresher._id%>'" class="prod1">
+                        <div class="title"><a href="/products?id=<%=fresher._id%>">
+                            <%=fresher.title%>
+                          </a></div>
+                        <div class="pricebox">
+                          <a href="/products?id=<%=fresher._id%>" class="price">₹<%=fresher.price%></a>
+                        </div>
+                      </div>
+                    </div>
+                    <% }%>
+                </div>
+              </div>
+              <div class="otherdeals">
+                <div class="recentlyheader">
+                  <div class="head">Other Deals</div>
+                  <div onclick="window.location.href = '/products/topDeals'" class="seeall"><a>See all ➜</a>
+                  </div>
+                </div>
+                <div class="product3">
+                  <% for (let topDeal of topDeals){%>
+                    <div class="prodtrend">
+                      <a href="/products?id=<%=topDeal._id%>"><img src="<%=topDeal.images[0].sizing%>" /></a>
+                      <div onclick="window.location.href = '/products?id=<%=topDeal._id%>'" class="prod1">
+                        <div class="title"><a href="/products?id=<%=topDeal._id%>">
+                            <%=topDeal.title%>
+                          </a></div>
+                        <div class="pricebox">
+                          <a href="" class="price">₹<%=topDeal.price%></a>
+                        </div>
+                      </div>
+                    </div>
+                    <% }%>
+                </div>
+                <div class="showmore">
+                  <a href="/products/topDeals" class="show"> + Show More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <%- include ("./partials/footer_long") %>

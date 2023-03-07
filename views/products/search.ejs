@@ -1,0 +1,41 @@
+<%- include ("../partials/boilerplate") %>
+    <div id="searchDIV">
+        <%=search%>
+    </div>
+    <%- include ("../partials/footer_short") %>
+        <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
+        <script>
+            console.log(productDATA)
+
+            function searchResult() {
+                const options = {
+                    // isCaseSensitive: false,
+                    // includeScore: false,
+                    // shouldSort: true,
+                    // includeMatches: false,
+                    // findAllMatches: false,
+                    // minMatchCharLength: 1,
+                    // location: 0,
+                    // threshold: 0.6,
+                    // distance: 100,
+                    // useExtendedSearch: false,
+                    // ignoreLocation: false,
+                    // ignoreFieldNorm: false,
+                    // fieldNormWeight: 1,
+                    keys: [
+                        "title",
+                        "tag",
+                        "description",
+                    ]
+                };
+
+                const fuse = new Fuse(products, options);
+
+                // Change the pattern
+                const div = document.getElementById("searchDIV")
+                div.textContent = fuse.search(search)
+                console.log(fuse.search(search))
+                // return fuse.search(search)
+            }
+            searchResult();
+        </script>

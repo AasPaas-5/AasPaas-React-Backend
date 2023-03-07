@@ -1,0 +1,43 @@
+<%- include ("../partials/boilerplate") %>
+  <%- include ("../partials/navbar") %>
+    <%- include('../partials/flash') %>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link
+        href="https://fonts.googleapis.com/css2?family=Germania+One&family=Open+Sans:wght@300&family=Roboto:ital,wght@1,100&display=swap"
+        rel="stylesheet">
+      <link
+        href="https://fonts.googleapis.com/css2?family=Germania+One&family=Inter:wght@300&family=Open+Sans:wght@300&family=Roboto:ital,wght@1,100&display=swap"
+        rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="stylesheet" href="/stylesheets/sell.css" />
+      <div id="youraccount">
+        <div class="box">
+          <div class="heading">Sell and Manage Products</div>
+          <div class="sections">
+            <a href="/products/selectCategory">
+              <div class="account">
+                <div><img
+                    src="https://res.cloudinary.com/sairev/image/upload/v1661367654/AasPaas/Files/Profile%20Images/sell_option_bfagmg.png"
+                    class="sellimg"></div>
+                <div class="text">
+                  <li class="head">Sell a new product</li>
+                  <li class="sub">Add a new product for listing</li>
+                </div>
+              </div>
+            </a>
+            <a href="/users/listedProducts">
+              <div class="account">
+                <div><img
+                    src="https://res.cloudinary.com/aaspaas/image/upload/v1666902404/SellPage/manage_product_naqlf5.png"
+                    class="deleteimg"></div>
+                <div class="text">
+                  <li class="head">Manage your listed products</li>
+                  <li class="sub">Manage and edit info regarding previously listed products</li>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div style="height: 100px"></div>
+      <%- include ("../partials/footer_short") %>

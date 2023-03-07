@@ -1,0 +1,207 @@
+body {
+    background: linear-gradient(180deg,
+            #c6eaff 0%,
+            #9ed5f3 23.69%,
+            #51a6f4 81.5%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+#youraccount {
+    width: 90%;
+    margin: auto;
+    margin-top: 10px;
+}
+
+hr {
+    position: relative;
+    top: 30px;
+}
+
+.box {
+    width: 1350px;
+    height: 850px;
+    background: #f1f1f1;
+    box-shadow: 15px 0px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 47px 47px 47px 47px;
+    padding-top: 20px;
+}
+
+.heading {
+    width: 450px;
+    height: 50px;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 45px;
+    line-height: 0%;
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+.sections {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 110px 110px;
+    row-gap: 30px;
+    column-gap: 25px;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 25px;
+}
+
+.cards {
+    border: 2px black solid;
+    border-radius: 20px;
+    text-decoration: none;
+    height: 110px;
+}
+
+.all-card {
+    color: black;
+    font-family: "Poppins", sans-serif;
+    border-radius: 50px;
+}
+
+.all-card img {
+    position: relative;
+    left: 20px;
+    top: 8px;
+    width: 90px;
+    height: 90px;
+}
+
+.all-card ul {
+    position: relative;
+    left: 90px;
+    bottom: 70px;
+    width: 300px;
+}
+
+.desc-title {
+    font-size: 24px;
+}
+
+#logoutimg {
+    width: 70px;
+    height: 70px;
+    margin-top: 14px;
+}
+
+#desc-logout {
+    margin-top: 6px;
+}
+
+#logout {
+    position: relative;
+    bottom: 20px;
+}
+
+#locked {
+    position: relative;
+    bottom: 20px;
+}
+
+#contact {
+    position: relative;
+    bottom: 20px;
+}
+
+#info {
+    position: relative;
+    bottom: 20px;
+}
+
+#sold {
+    position: relative;
+    bottom: 20px;
+}
+
+#delete {
+    position: relative;
+    bottom: 15px;
+}
+
+#editimg {
+    width: 70px;
+    height: 70px;
+    margin-top: 10px;
+}
+
+#desc-edit {
+    margin-top: 10px;
+}
+
+#desc-locked {
+    position: relative;
+    bottom: 80px;
+}
+
+#desc-contact {
+    position: relative;
+    bottom: 85px;
+}
+
+#deleteimg {
+    width: 100px;
+    height: 100px;
+}
+
+#desc-delete {
+    position: relative;
+    bottom: 85px;
+}
+
+.info {
+    width: 900px;
+    height: 90px;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 45px;
+    line-height: 0%;
+    margin-left: 30px;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+.information {
+    display: flex;
+    justify-content: center;
+}
+
+.infobox {
+    box-sizing: border-box;
+    width: 1300px;
+    height: 300px;
+    border: 1px solid #484848;
+    border-radius: 29px;
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+}
+
+.infobox div {
+    padding-top: 15px;
+    border-bottom: 1px solid #7d7d7d;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    padding-left: 15px;
+}
+
+.infobox div:nth-of-type(5) {
+    border-bottom: none;
+}

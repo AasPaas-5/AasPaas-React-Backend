@@ -1,0 +1,154 @@
+<style>
+  .navbar {
+    display: flex;
+    justify-content: left;
+    height: 100px;
+    margin-left: 35px;
+  }
+
+  .nav {
+    display: grid;
+    grid-template-columns: 300px 600px 400px 30px 100px;
+  }
+
+  .logo {
+    width: 250px;
+    margin-top: -6px;
+    cursor: pointer;
+  }
+
+  .searchbox input[type=text] {
+    width: 500px;
+    height: 35px;
+    margin-left: auto;
+    margin-top: 5px;
+
+    background: #F2F2F2;
+    border: 1px solid #000000;
+    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 33px 0px 0px 33px;
+    font-size: 20px;
+    padding-left: 10px;
+    font-family: "poppins";
+  }
+
+  .searchbox .button {
+    position: absolute;
+    width: 50px;
+    height: 35px;
+    margin-top: 5px;
+
+    background: #343434;
+    border: 2px solid #000000;
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 89px 89px 0px;
+    cursor: pointer;
+  }
+
+  .searchbox .button img {
+    width: 23px;
+    padding-top: 2px;
+  }
+
+  .nav-items {
+    margin-top: 2px;
+  }
+
+  .nav-items ul {
+    display: grid;
+    grid-template-columns: 100px 110px 100px;
+  }
+
+  .nav-items ul li {
+    list-style: none;
+  }
+
+  .nav-items ul li a {
+    text-decoration: none;
+    font-family: 'Poppins' !important;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 44px;
+
+    color: #000000;
+  }
+
+  .navHO {
+    padding-right: 12px;
+  }
+
+
+  .signin ul li a {
+    text-decoration: none;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    color: #000000;
+  }
+
+  .signin ul li {
+    list-style: none;
+    margin-top: 9px;
+  }
+
+  .profileicon .profile {
+    width: 52px;
+    height: 52px;
+    border-radius: 35px;
+  }
+</style>
+
+<div class="navbar">
+  <div class="nav">
+    <div class="img"><img onclick="window.location.href = '/'"
+        src=" https://res.cloudinary.com/aaspaas/image/upload/v1666903174/Social/AasPaas_Black_mdqn23.png"
+        class="logo" /></div>
+    <div class="searchbox">
+      <form action="/products/search" method="POST">
+        <input name="search" type="text" placeholder="Search for products" />
+        <button class="button"><img
+            src="https://res.cloudinary.com/aaspaas/image/upload/v1666903403/Miscellaneous/search_logo_yaxuj5.png" /></button>
+      </form>
+    </div>
+    <div class="nav-items">
+      <ul>
+        <li><a style="font-family: Inter !important;" href="/" class="navHO">Home</a></li>
+        <li><a style="font-family: Inter !important;" href="/users/orders" class="navHo">Orders</a></li>
+        <li><a style="font-family: Inter !important;" href="/users/sell" class="sell">Sell</a></li>
+      </ul>
+    </div>
+    <div class="profileicon">
+      <% if(!currentUser) {%>
+        <a href="/users/login">
+          <img class="profile"
+            src="https://res.cloudinary.com/aaspaas/image/upload/v1666902502/Social/signin_j2hthm.png" /></a>
+    </div>
+    <div class="signin">
+      <ul>
+        <li><a href="/users/profile">Sign in</a></li>
+      </ul>
+
+      <% } else {%>
+        <% const [first, last]=currentUser.name.split(' '); %>
+        <a href="/users/profile">
+          <img class="profile" src="<%=currentUser.profileImg%>" /></a>
+        </div>
+        <div class="signin">
+          <ul>
+            <li><a href="/users/profile">&nbsp;&nbsp;<%=first%></a></li>
+          </ul>
+    <% } %>
+    </div>
+  </div>
+</div>
+<script>
+  function redirect() {
+    window.location.href = "/products/topDeals";
+    return false;
+  }
+</script>

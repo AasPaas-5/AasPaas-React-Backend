@@ -1,0 +1,205 @@
+ol,
+ul {
+    list-style: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(180deg, #C6EAFF 0%, #9ED5F3 23.69%, #51A6F4 81.5%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+}
+
+.freshers {
+    display: flex;
+    justify-content: left;
+}
+
+.topimage {
+    margin-left: -3px;
+    margin-top: 50px;
+    min-width: 1529px;
+    height: 150px;
+    background: url(https://res.cloudinary.com/aaspaas/image/upload/v1667076265/Backgrounds/topDealsHeader_bxrdsm.png);
+    background-size: 1550px 130px;
+    background-repeat: no-repeat;
+}
+
+.whiteback {
+    margin-top: -25px;
+    width: 1526px;
+    background: white;
+    padding-bottom: 50px;
+}
+
+.freshers1 {
+    display: flex;
+    justify-content: left;
+    display: grid;
+    grid-template-columns: 1400px;
+    /* margin-top: 135px; */
+    margin-left: 60px;
+    padding-top: 10px;
+}
+
+.otherdeals {
+    padding-top: 20px;
+    background: #D2E3F2;
+    border: 1px solid #c1c1c1;
+    border-radius: 20px;
+    filter: drop-shadow(4px 4px 12px rgba(0, 0, 0, 0.25));
+    padding-bottom: 50px;
+}
+
+.product2 {
+    display: grid;
+    grid-template-columns: repeat(6, 225px);
+    grid-template-rows: 220px;
+    margin-left: 23.5px;
+}
+
+.product3 {
+    display: grid;
+    grid-template-columns: repeat(6, 225px);
+    grid-template-rows: 220px 220px 220px;
+    row-gap: 60px;
+    margin-left: 23.5px;
+    margin-top: 10px;
+}
+
+.head {
+    font-family: 'Alata';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 0%;
+    padding: 20px;
+}
+
+.seeall {
+    font-family: 'Alata';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 0%;
+    padding: 22px;
+    margin-left: -20px;
+
+    color: #555555;
+}
+
+.product {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 220px;
+}
+
+.prod {
+    background: #FFFFFF;
+    border: 1px solid #BEBEBE;
+    border-radius: 20px 20px 0px 0px;
+    margin: 20px;
+}
+
+.prod img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px 20px 0px 0px;
+    /* object-fit: cover; */
+}
+
+.prod1 {
+    height: 65px;
+    background: #FFFFFF;
+    border-width: 1.5px 1px 1px 1px;
+    border-style: solid;
+    border-color: #BEBEBE;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3), inset 0px 2px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 20px 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.prod1 div a {
+    text-decoration: none;
+    color: black;
+}
+
+.title {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    height: 35px;
+    line-height: 15px;
+    /* padding-top: 5px; */
+    padding: 5px;
+}
+
+.pricebox {
+    width: 70px;
+    margin: auto;
+    background: #BCDBF8;
+    border-radius: 12px;
+}
+
+.price {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.product1 {
+    display: grid;
+    grid-template-columns: repeat(3, 225px);
+    grid-template-rows: 220px;
+}
+
+.trendingheader {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+}
+
+.prodtrend {
+    background: #FFFFFF;
+    border: 1px solid #BEBEBE;
+    border-radius: 20px 20px 0px 0px;
+    margin: 20px;
+    margin-top: 5px;
+    height: 180px;
+}
+
+.prodtrend img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px 20px 0px 0px;
+    object-fit: cover;
+}
+
+.bottom {
+    display: flex;
+    justify-content: left;
+}
+
+.bottomBG {
+    margin-left: -3px;
+    margin-top: -5px;
+    width: 1529px;
+    height: 80px;
+    background: url(https://res.cloudinary.com/aaspaas/image/upload/v1667075969/Backgrounds/topDealsBottom_aksrrf.png);
+    background-size: 1550px 50px;
+    background-repeat: no-repeat;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}

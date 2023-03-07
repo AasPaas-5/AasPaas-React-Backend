@@ -1,0 +1,115 @@
+body {
+    background: url("https://res.cloudinary.com/sairev/image/upload/v1665773936/AasPaas/Files/Contact_US_Final_pczfuy.png") fixed center center/cover;
+    margin: 0px;
+}
+
+.cont1{
+    display: flex;
+    justify-content: left;
+}
+
+.product-details {
+    border-radius: 17px;
+    min-width: 920px;
+    height: 490px;
+    margin-left: 308px;
+    background-color: #ffffff;
+    padding: 20px;
+    padding-top: 0px;
+
+    font-family: "Poppins", sans-serif;
+}
+
+.product-details h1 {
+    font-size: 36px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+.product-details input {
+    border: 2px solid #d9d9d9;
+    border-radius: 5px;
+    width: 40%;
+    height: 30px;
+    margin: 10px 10px;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    background-color: #d4d4d4e6;
+}
+
+.product-details form {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.desc {
+    position: relative;
+    left: 50%;
+    bottom: 200px;
+    width: 600px;
+}
+
+#description {
+    height: 130px;
+    width: 315px;
+    background-color: #d4d4d4e6;
+    ;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#setprice {
+    width: 20%;
+}
+
+.setprice {
+    margin-left: 10px;
+}
+
+.product-details form button {
+    width: 10em;
+    height: 2.2em;
+    border: none;
+    background-color: #52a7f5;
+    color: white;
+    border-radius: 7px;
+    font-size: 20px;
+    cursor: pointer;
+    position: relative;
+    bottom: 73px;
+    left: 40%;
+}
+
+#upload-image {
+    width: 300px;
+    margin: 0px;
+    height: 30px;
+    border: none;
+    border-radius: 1px;
+    padding-left: 0px;
+}
+
+.upload {
+    width: 500px;
+    background-color: white;
+    margin-top: 12px;
+}
+
+.upload-photos {
+    position: relative;
+    bottom: 110px;
+}
+
+.Enterp {
+    padding-top: 7px;
+}
+
+.subbutton {
+    margin-bottom: 30px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}

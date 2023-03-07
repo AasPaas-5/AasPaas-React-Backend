@@ -1,0 +1,60 @@
+<%- include ("../partials/boilerplate") %>
+    <%- include ("../partials/navbar") %>
+        <%- include('../partials/flash') %>
+            <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+                rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="/stylesheets/productRequest.css" />
+            <div class="box">
+                <div class="content">
+                    <div class="head">
+                        <h1>Requests for <a href="">OMEGA MINI DRAFTER</a></h1>
+                        <button class="btn-blue">4 pending requests</button>
+                    </div>
+
+                    <div class="cols">
+                        <div>Buy Requests</div>
+                        <div>Bid Price</div>
+                        <div>Action</div>
+                    </div>
+
+                    <% for (let bid of bids){%>
+                        <div class="requests">
+                            <div class="Sno"></div>
+                            <div class="customer-name">Buy Request from Naman</div>
+                            <div class="customer-desc">
+                                <div class="price-contact-delete">
+                                    <div class="price">₹ 150</div>
+                                    <div class="buttons">
+                                        <a href=""><button class="contact-buyer">Contact this buyer</button></a>
+                                        <a href=""><button class="delete-requests">Delete the request</button></a>
+                                    </div>
+
+                                </div>
+                                <div class="customers-note">
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam, labore neque nemo,
+                                    sequi
+                                    possimus nostrum est soluta magni sunt impedit molestiae pariatur praesentium,
+                                    officiis minus?
+                                    Quaerat nostrum sequi eos vel facere delectus repudiandae itaque, ut quos aspernatur
+                                    quam,
+                                    adipisci, enim ducimus libero? Eos totam itaque neque, quos reprehenderit
+                                    consequatur. Sequi
+                                    atque hic voluptatem doloremque, numquam assumenda officia nihil repudiandae quia
+                                    voluptatibus
+                                    architecto, eius odit, laudantium molestias delectus corporis officiis possimus
+                                    quaerat itaque
+                                    exercitationem. Ad sit non asperiores soluta tempora libero, ipsam id dolorum
+                                    assumenda magnam
+                                    commodi deleniti possimus recusandae itaque sint cumque, praesentium ratione rerum
+                                    molestiae ea,
+                                    neque est! Repellendus.
+                                </div>
+                            </div>
+                        </div>
+                        <% }%>
+
+                </div>
+            </div>
+            <div style="height:100px;"></div>
+            <%- include ("../partials/footer_short") %>

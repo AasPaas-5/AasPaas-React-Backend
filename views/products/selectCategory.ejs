@@ -1,0 +1,51 @@
+<%- include ("../partials/boilerplate") %>
+  <%- include ("../partials/navbar") %>
+    <%- include('../partials/flash') %>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+      <div class="content">
+        <link rel="stylesheet" href="/stylesheets/selectCategory.css" />
+        <h1>Choose the relevant category</h1>
+        <div class="content-category">
+          <a href="/products/newProduct?category=Stationary">
+            <div class="category"><img
+                src="https://res.cloudinary.com/sairev/image/upload/v1665852509/AasPaas/Files/image_55_duz7qh.png"
+                id="stationary">&nbsp;&nbsp;<span>Stationary</span></div>
+          </a>
+          <a href="/products/newProduct?category=Electronics">
+            <div class="category"><img
+                src="https://res.cloudinary.com/sairev/image/upload/v1665852509/AasPaas/Files/image_58_bsrzrb.png">
+              &nbsp;&nbsp;<span>Electronics</span>
+            </div>
+          </a>
+          <a href="/products/newProduct?category=MobilePhones">
+            <div class="category"><img
+                src="https://res.cloudinary.com/sairev/image/upload/v1665852509/AasPaas/Files/image_57_ckbqpg.png">
+              &nbsp;&nbsp;<span>Mobile Phones</span></div>
+          </a>
+          <a href="/products/newProduct?category=BooksandNotes">
+            <div class="category"><img
+                src="https://res.cloudinary.com/sairev/image/upload/v1665852509/AasPaas/Files/image_59_lsj8uf.png">
+              &nbsp;&nbsp;<span>Books and Notes</span></div>
+          </a>
+          <a href="/products/newProduct?category=Cycles">
+            <div class="category"><img
+                src="https://res.cloudinary.com/sairev/image/upload/v1665852509/AasPaas/Files/image_60_e2nzzu.png"
+                id="mobilephone">&nbsp;&nbsp;<span id="mobile">Cycles</span></div>
+          </a>
+          <a href="/products/newProduct?category=Appliances">
+            <div class="category"><img
+                src="https://res.cloudinary.com/sairev/image/upload/v1665852509/AasPaas/Files/image_62_cshsbc.png"
+                id="appliances">&nbsp;&nbsp;<span id="appliance">Appliances</span></div>
+          </a>
+          <a href="/products/newProduct?category=Miscellaneous">
+            <div class="category" id="miscellaneous"><img
+                src="https://res.cloudinary.com/sairev/image/upload/v1665854057/AasPaas/Files/image_63_gwesxl.png">
+              &nbsp;&nbsp;<span>Miscellaneous</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div style="height: 100px"></div>
+      <%- include ("../partials/footer_short") %>

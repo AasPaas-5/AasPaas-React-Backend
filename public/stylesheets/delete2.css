@@ -1,0 +1,31 @@
+body {
+    /* background: url("Images/Contact\ US\ Final.png") fixed center center/cover;  */
+    background: linear-gradient(180deg,
+            #c6eaff 0%,
+            #9ed5f3 23.69%,
+            #51a6f4 81.5%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0px;
+    padding: 0px;
+}
+
+.confirmation-message {
+    box-shadow: 2px 2px 10px black;
+    width: 55%;
+    margin: auto;
+    text-align: center;
+    padding: 40px 0px;
+    background-color: rgba(214, 235, 247, 0.8);
+    border-radius: 11px;
+    margin-top: 10%;
+    font-family: "Poppins", sans-serif;
+}
+
+h1 {
+    font-size: 32px;
+    margin-top: 0px;
+    font-weight: 800;
+    position: relative;
+    bottom: 20px;
+}

@@ -1,0 +1,154 @@
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+body {
+    background: linear-gradient(180deg, #C6EAFF 0%, #9ED5F3 23.69%, #51A6F4 81.5%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Inter', sans-serif;
+}
+
+.box {
+    display: flex;
+    justify-content: left;
+    margin-left: 45px;
+}
+
+.content {
+    background-color: #DCEAF8;
+    box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.12);
+    padding: 20px;
+    border-radius: 16px;
+    min-width: 1440px;
+    margin-top: 20px;
+    font-family: 'Inter', sans-serif;
+}
+
+.head {
+    display: flex;
+    column-gap: 500px;
+}
+
+.content h1 a {
+    color: #2B32D4;
+}
+
+.btn-blue {
+    text-align: center;
+    color: white;
+    background-color: #52A7F5;
+    border: rgba(155, 155, 155, 0.7) 3px solid;
+    padding: 5px;
+    width: 200px;
+    border-radius: 20px;
+    height: 50px;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.btn-blue:hover {
+    background-color: #63b1fa;
+}
+
+
+.cols {
+    display: grid;
+    grid-template-columns: 20% 35% 36%;
+    font-size: 22px;
+    text-align: center;
+    font-family: 'Alata';
+}
+
+.requests {
+    margin: 10px;
+    margin-bottom: 30px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 3% 31% 66%;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 2px 2px 6px rgba(77, 77, 77, 0.578);
+}
+
+.Sno {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 55px;
+}
+
+.customer-name {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 55px;
+}
+
+
+.price-contact-delete {
+    display: flex;
+    column-gap: 25%;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: 600;
+    background-color: #DCEAF8;
+    padding: 5px;
+    border-radius: 10px;
+    padding-top: 6px;
+}
+
+.contact-buyer {
+    color: white;
+    background-color: #52A7F5;
+    border: none;
+    padding: 4px;
+    width: 240px;
+    font-size: 20px;
+    border-radius: 7px;
+    border: rgba(155, 155, 155, 0.7) 2px solid;
+    font-weight: 600;
+}
+
+.contact-buyer:hover {
+    background-color: #63b1fa;
+}
+
+.delete-requests {
+    color: white;
+    background-color: #C91F21;
+    border: none;
+    padding: 4px;
+    width: 216px;
+    font-size: 20px;
+    border-radius: 7px;
+    border: rgba(155, 155, 155, 0.7) 2px solid;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.delete-requests:hover {
+    background-color: rgb(232, 37, 41);
+}
+
+.customers-note {
+    height: 85px;
+    width: 900px;
+    background-color: #DCEAF8;
+    margin-top: 20px;
+    border-radius: 11px;
+    overflow: hidden;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px;
+    padding-left: 12px;
+}

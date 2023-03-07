@@ -1,0 +1,49 @@
+<%- include ("../partials/boilerplate") %>
+  <%- include ("../partials/navbar") %>
+    <%- include('../partials/flash') %>
+      <link rel="stylesheet" href="/stylesheets/listedProduct.css" />
+      <div class="content">
+        <h1>Pending Product Requests</h1>
+        <% for (let product of products){%>
+          <div class="your-orders">
+            <div class="product-img">
+              <a href="/products?id=<%=product._id%>"><img src="<%=product.images[0].sizing%>" /></a>
+              <div class="prod1">
+                <div class="title"><a href="/products?id=<%=product._id%>">
+                    <%=product.title%>
+                  </a></div>
+                <div class="pricebox">
+                  <a href="/products?id=<%=product._id%>" class="price">₹<%=product.price%></a>
+                </div>
+              </div>
+            </div>
+            <div class="product-desc">
+              <h2>
+                <%=product.title%>
+                  <p>Listed on : <%=product.listedOn%>
+                  </p>
+              </h2>
+
+              <p id="price">Price : ₹<%=product.price%><br>
+                  <h5><b>Product Description</b></h5>
+              </p>
+              <p>
+                <%=product.description%>
+              </p>
+            </div>
+            <div class="product-status">
+              <p>Review Buy Requests</p>
+              <% if(!product.bid.length==0 ) {%>
+                <a href="/products/productDetails?id=<%=product._id%>"><button class="btn-blue">
+                    <%=product.bid.length%> Pending Requests
+                  </button></a>
+                <% } else {%>
+                  <a><button class="btn-red">0 Pending Requests</button></a>
+                  <% } %>
+                    <a href=""><button class="btn-green">Edit Product</button></a>
+            </div>
+          </div>
+          <% }%>
+      </div>
+      <div style="height : 100px;"></div>
+      <%- include ("../partials/footer_short") %>

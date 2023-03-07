@@ -1,0 +1,46 @@
+<%- include ("../partials/boilerplate") %>
+  <%- include ("../partials/navbar") %>
+    <%- include('../partials/flash') %>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+      <link rel="stylesheet" href="/stylesheets/newProduct.css" />
+      <div class="cont1">
+        <div class="product-details">
+          <h1 class="Enterp">Enter product details</h1>
+          <form action="/products/newProduct" method="POST" novalidate enctype="multipart/form-data">
+            Name<span style="color: red">*</span>
+            <input type="text" id="title" name="product[title]" required /><br />
+
+            Brand &nbsp;
+            <input type="text" id="tag" name="product[brand]" /><br />
+
+            Tags<span style="color: red">*</span> &nbsp;
+            <input type="text" id="tag" name="product[tag]" required /><br />
+
+            Price<span style="color: red">*</span>
+            <span class="setprice">
+              <input type="number" id="setprice" min="0" placeholder="0.00" name="product[price]" /><br />
+            </span>
+
+            <div class="desc">
+              <label style="position: relative; bottom: 100px; margin-right: 10px">Description<span
+                  style="color: red">*</span>
+              </label>
+              <textarea cols="30" rows="3" id="description" maxlength="160" name="product[description]"
+                style="resize: none; position: relative; top: 10px"></textarea>
+            </div>
+
+            <div class="upload-photos">
+              Add upto 5 photos of your product*<br />
+              <div class="input-group mb-3">
+                <input type="file" class="form-control" id="inputGroupFile02" name="images" style="height: 40px"
+                  multiple />
+                <!-- <label class="input-group-text" for="inputGroupFile02">Upload</label> -->
+              </div>
+            </div>
+            <button class="subbutton" type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+      <div style="height: 100px"></div>
+      <%- include ("../partials/footer_short") %>

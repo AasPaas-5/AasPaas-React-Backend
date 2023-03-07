@@ -1,0 +1,72 @@
+<%- include ("../partials/boilerplate") %>
+  <%- include ("../partials/navbar") %>
+    <%- include('../partials/flash') %>
+      <link href="https://fonts.googleapis.com/css2?family=Chicle&display=swap" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css2?family=Germania+One&display=swap" rel="stylesheet" />
+      <link href="http://fonts.cdnfonts.com/css/shakies" rel="stylesheet" />
+      <link rel="stylesheet" href="/stylesheets/register.css" />
+      <div class="container">
+        <form action="/users/edit" method="POST" class="validated-form" class="registration">
+          <div id="register">
+            <img src="https://res.cloudinary.com/aaspaas/image/upload/v1666903174/Social/AasPaas_Black_mdqn23.png" />
+          </div>
+          <br /><br />
+          <div id="total">
+            <div id="one">
+              <div class="ellipse"><img src="<%=user.profileImg%>" /></div>
+              <label for="name" id="info">Name :</label><br />
+              <input type="text" id="enter" name="name" class="enter" value="<%=user.name%>" required autofocus
+                oninvalid="this.setCustomValidity('Enter your Name')" oninput="this.setCustomValidity('')"
+                disabled /><br />
+              <label for="email" id="info">Email ID :</label><br />
+              <input type="text" id="enter" name="email" class="enter" value="<%=user.email%>" required
+                pattern="^[a-z0-9.]+@[itbhu]{5,6}.[ac]{2}.[in]{2}$"
+                oninvalid="this.setCustomValidity('Enter your college ID only')" oninput="this.setCustomValidity('')"
+                disabled /><br />
+              <label for="branch" id="info">Branch :</label><br />
+              <select type="text" id="options" name="branch" required class="options1"
+                onchange="document.querySelector('.options1').style.color = 'black'" style="color: rgb(77, 77, 77)"
+                oninvalid="this.setCustomValidity('Select your Branch')" oninput="this.setCustomValidity('')">
+                <option value="<%=user.branch%>" disabled selected>
+                  <%=user.branch%>
+                </option>
+              </select>
+              <br />
+            </div>
+            <div id="two">
+              <label for="year" id="info">Year :</label><br />
+              <select type="text" id="options" name="year" required class="options2"
+                onchange="document.querySelector('.options2').style.color = 'black'" style="color: rgb(77, 77, 77)"
+                oninvalid="this.setCustomValidity('Select your Year')" oninput="this.setCustomValidity('')">
+                <option value="<%=user.branch%>" disabled selected>
+                  <%=user.branch%>
+                </option>
+              </select>
+              <br />
+              <label for="contact" id="info">Contact Number:</label><br />
+              <input type="text" id="enter" name="contact" class="enter" placeholder="<%=user.contact%>" required
+                pattern="^[0-9]{10,}$" oninvalid="this.setCustomValidity('Enter correct contact number')"
+                oninput="this.setCustomValidity('')" />
+              <br />
+              <label for="hostel" id="info">Hostel :</label><br />
+              <select type="text" id="options" name="hostel" required class="options3"
+                onchange="document.querySelector('.options3').style.color = 'black'" style="color: rgb(77, 77, 77)"
+                oninvalid="this.setCustomValidity('Select your Hostel')" oninput="this.setCustomValidity('')">
+                <option value="<%=user.hostel%>" disabled selected>
+                  <%=user.hostel%>
+                </option>
+              </select>
+              <br />
+              <label for="room" id="info">Room No. :</label><br />
+              <input type="number" id="enter" name="room" required class="enter" placeholder="<%=user.room%>"
+                oninvalid="this.setCustomValidity('Enter correct Room Number')" oninput="this.setCustomValidity('')" />
+              <br />
+            </div>
+          </div>
+          <div id="btn">
+            <button type="submit" class="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+      <%- include ("../partials/footer_short") %>

@@ -1,0 +1,57 @@
+<%- include ("../partials/boilerplate") %>
+  <%- include ("../partials/navbar") %>
+    <%- include('../partials/flash') %>
+      <link rel="stylesheet" href="/stylesheets/contact.css" />
+      <div class="container">
+        <div class="question">Have some Questions?</div>
+        <div class="socials">
+          Contact us on our socials:
+          <a href=""><img
+              src="https://res.cloudinary.com/sairev/image/upload/v1665898373/SecondSwap/Files/Gmail_logo_lyszs9_durbqq.png" /></a><a
+            href=""><img
+              src="https://res.cloudinary.com/sairev/image/upload/v1665898376/SecondSwap/Files/Instagram_gwi0aa_cxpxlj.png" /></a><a
+            href=""><img
+              src="https://res.cloudinary.com/sairev/image/upload/v1665898378/SecondSwap/Files/Twitter_logo_zsveob_kbuyar.png" /></a>
+        </div>
+        <div class="or">OR</div>
+        <div class="inner-container">
+          <div class="envelope">
+            <img
+              src="https://res.cloudinary.com/sairev/image/upload/v1665898373/SecondSwap/Files/Envelop_vk2qar_meq4re.png" />
+          </div>
+          <div class="information">
+            <p>Directly ask us here</p>
+            <form name="google-sheets">
+              <input name="name" type="text" id="name" placeholder="Name: " required /><br />
+              <input name="email" type="email" id="email" placeholder="Email: " required /><br />
+              <input name="phone" type="number" id="phone" placeholder="Mobile Number: " required /><br />
+              <input name="description" type="text" id="description" placeholder="Description : " required /><br />
+              <button class="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <%- include ("../partials/footer_short") %>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+        <script>
+          const scriptURL = 'https://script.google.com/macros/s/AKfycbw7Kv5qvQFR_qu3TsJkxYvFb4S7LUJbXh9loYOEYkitWU0BZWfApevXzIdGRgVJ_gYlxw/exec'
+          const form = document.forms["google-sheets"]
+          form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+              .then(response => console.log('Success!', response))
+              .catch(error => console.error('Error!', error.message))
+
+            Swal.fire({
+              icon: "success",
+              title: "Thanks for Contacting Us",
+              text: "Your issue will be resolved Soon!!",
+              showConfirmButton: false,
+            });
+
+            setInterval(function () {
+              location.href = "/";
+            }, 2000);
+          })
+        </script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

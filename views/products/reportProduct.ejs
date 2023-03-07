@@ -1,0 +1,92 @@
+<%- include ("../partials/boilerplate") %>
+  <%- include ("../partials/navbar") %>
+    <%- include('../partials/flash') %>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Alata&family=Amaranth&family=Germania+One&family=Inter:wght@300&family=Montserrat&family=Open+Sans:wght@300&family=Poppins:wght@200;300;400&family=Roboto:ital,wght@1,100&display=swap"
+        rel="stylesheet" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Alata&family=Amaranth&family=Germania+One&family=Inter:wght@300&family=Open+Sans:wght@300&family=Poppins:wght@200;300;400&family=Roboto:ital,wght@1,100&display=swap"
+        rel="stylesheet" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Amaranth&family=Germania+One&family=Inter:wght@400&family=Open+Sans:wght@300&family=Poppins:wght@200;300;400;600&family=Roboto:ital,wght@1,100&display=swap"
+        rel="stylesheet" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Germania+One&family=Inter:wght@300&family=Open+Sans:wght@300&family=Poppins:wght@200;300;400&family=Roboto:ital,wght@1,100&display=swap"
+        rel="stylesheet" />
+      <link rel="stylesheet" href="/stylesheets/reportProduct.css" />
+
+      <div class="box">
+        <div class="content">
+          <span><a onclick="javascript:window.history.back()">←Back</a></span>
+          <h1>Report a Product?</h1>
+          <div class="product">
+            <div class="product-img">
+              <a href="/products?id=<%=product._id%>"><img src="<%=product.images[0].sizing%>" /></a>
+              <div class="prod1">
+                <div class="title"><a href="/products?id=<%=product._id%>">
+                    <%=product.title%>
+                  </a></div>
+                <div class="pricebox">
+                  <a href="/products?id=<%=product._id%>" class="price">₹<%=product.price%></a>
+                </div>
+              </div>
+            </div>
+            <div class="product-desc">
+              <h2>
+                <%=product.title%>
+              </h2>
+              <h5>Sellers Note</h5>
+              <p>
+                <%=product.description%>
+              </p>
+            </div>
+          </div>
+          <form id="product-lock" name="google-sheets">
+            <label for="type" id="label-report">Reason for reporting:</label>
+            <select type="text" name="type" id="typeR" required
+              onchange="document.querySelector('#typeR').style.color = 'black'"
+              style="margin-left: 70px;color: rgb(77, 77, 77)" oninvalid="this.setCustomValidity('Type of Report')"
+              oninput="this.setCustomValidity('')">
+              <option value="" disabled selected hidden>Type of Report</option>
+              <option value="Spam">Spam</option>
+              <option value="Offensive Language">Offensive Language</option>
+              <option value="Obscene">Obscene</option>
+              <option value="Mismatching image or description">Mismatching image or description</option>
+              <option value="Other">Other</option>
+            </select><br>
+            <input type="hidden" name="prodID" value="<%=product._id%>">
+            <input type="hidden" name="userID" value="<%=currentUser._id%>">
+            <div style="display: flex; margin-left:370px;">
+              <label for="description" id="desc">Give a brief description of the issue:</label><br>
+              <textarea for="description" name="descriptionText" cols="35" rows="3" id="description"
+                maxlength="120"></textarea>
+            </div>
+            <button type="submit" id="submit">Report</button>
+          </form>
+        </div>
+      </div>
+      <div style="height: 100px"></div>
+      <%- include ("../partials/footer_short") %>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+        <script>
+          const scriptURL = "https://script.google.com/macros/s/AKfycbyfCkQc5Izf0P0cRy1mSthwcp_jWSI5zcSsCIvsdfiWkPlhLpU4omDkVui3W1cNgHJS5Q/exec"
+          const form = document.forms["google-sheets"]
+          form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+              .then(response => console.log('Success!', response))
+              .catch(error => console.error('Error!', error.message))
+
+            Swal.fire({
+              icon: "success",
+              title: "Thanks for Contacting Us",
+              text: "Your issue will be resolved Soon!!",
+              showConfirmButton: false,
+            });
+
+            setInterval(function () {
+              location.href = "/";
+            }, 2000);
+          })
+        </script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

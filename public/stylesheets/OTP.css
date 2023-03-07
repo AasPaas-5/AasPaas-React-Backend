@@ -1,0 +1,95 @@
+body {
+    background: linear-gradient(180deg,
+            #c9e6f7 0%,
+            #6fb3eb 46.27%,
+            #3f9af1 100%);
+
+    background-attachment: fixed;
+    margin: 0px;
+    padding: 0px;
+}
+
+.logo {
+    /* font-family: "Shakies", sans-serif; */
+    font-size: 5em;
+}
+
+.logo img {
+    width: 300px;
+    position: relative;
+    left: 15px;
+}
+
+.form {
+    box-shadow: 10px 10px #686666ad;
+    background-color: #e7e7e7;
+    width: 15rem;
+    margin: auto;
+    margin-top: 2rem;
+    padding: 0.4rem;
+    border-radius: 1.25rem;
+    height: 25rem;
+    width: 25rem;
+    font-family: "Dongle", sans-serif;
+}
+
+.submitbtn {
+    position: relative;
+    left: 2.83em;
+    top: 0.6em;
+    height: 50px;
+    font-size: 40px;
+    background-color: rgba(0, 123, 255, 0.792);
+    color: white;
+    border: none;
+    width: 40%;
+    border-radius: 5px;
+}
+
+.submitbtn p {
+    position: relative;
+    bottom: 5px;
+}
+
+.links {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.links a {
+    font-size: 35px;
+    text-decoration: none;
+    font-family: "Dongle", sans-serif !important;
+    font-weight: 600;
+    margin: auto;
+}
+
+.digit-group input {
+    position: relative;
+    left: 7.3rem;
+    width: 30px;
+    height: 50px;
+    background-color: #e7e7e7;
+    border: none;
+    border-bottom: 2px black solid;
+    line-height: 50px;
+    text-align: center;
+    font-size: 24px;
+    font-family: "Raleway", sans-serif;
+    font-weight: 200;
+
+    margin: 0 2px;
+}
+
+.digit-group .splitter {
+    padding: 0 5px;
+    color: white;
+    font-size: 24px;
+}
+
+.prompt {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+}

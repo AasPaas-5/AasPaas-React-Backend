@@ -1,0 +1,97 @@
+body {
+    background: url("https://res.cloudinary.com/sairev/image/upload/v1665898375/SecondSwap/Files/Contact_US_Final_pczfuy_mg17io.png") fixed center center/cover;
+}
+
+.question {
+    text-align: center;
+    font-size: 48px;
+    font-weight: 800;
+    font-family: "Poppins", sans-serif;
+    position: relative;
+    bottom: 20px;
+}
+
+.socials {
+    text-align: center;
+    font-size: 32px;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    position: relative;
+    bottom: 16px;
+}
+
+.socials img {
+    width: 40px;
+    margin-left: 20px;
+}
+
+.or {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 800;
+    font-family: "Poppins", sans-serif;
+}
+
+.inner-container {
+    display: flex;
+    position: relative;
+    bottom: 20px;
+    column-gap: 10%;
+    margin-left: 10%;
+}
+
+.envelope img {
+    width: 40rem;
+    position: relative;
+    top: 20px;
+}
+
+.information {
+    font-size: 28px;
+    font-family: "Inter", sans-serif;
+}
+
+.information p {
+    text-align: center;
+}
+
+.information form {
+    background-color: rgba(214, 235, 247, 1);
+    text-align: center;
+    height: 300px;
+    width: 350px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 2px 2px 10px rgb(37, 37, 37);
+}
+
+.information input {
+    height: 30px;
+    width: 90%;
+    font-size: 16px;
+    border-radius: 20px;
+    padding-left: 10px;
+    border: none;
+    font-family: "Poppins", sans-serif;
+}
+
+#description {
+    margin-top: 10px;
+    height: 30%;
+    border-radius: 12px;
+}
+
+#date {
+    display: none;
+}
+
+.submit {
+    height: 40px;
+    width: 150px;
+    border-radius: 8px;
+    border: none;
+    background-color: rgba(0, 123, 255, 0.792);
+    color: white;
+    margin-top: 15px;
+    font-size: 24px;
+}
