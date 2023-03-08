@@ -2,37 +2,38 @@ const Product = require("../models/product");
 const Bid = require("../models/bid");
 const User = require("../models/user");
 
+module.exports.getProducts = async (req, res) => {
+  const { count } = req.query;
+  const countInt = parseInt(count, 10);
+  const products = await Product.aggregate([{ $sample: { size: countInt } }]);
+  res.status(200).json(products);
+};
+
 module.exports.topDeal = async (req, res) => {
   const products = await Product.find({});
   res.render("products/topDeals", { products, title: "Top Deals" });
 };
 
 module.exports.renderProduct = async (req, res) => {
-  const { id } = req.query;
-  const foundProduct = await Product.findById(id).populate({ path: "author" });
-  const sortProd = await Product.find().sort({ price: 1 });
-  const topDeals = sortProd.slice(0, 12);
-  res.render("products/eachProduct", {
-    foundProduct,
-    topDeals,
-    title: "Product Details",
-  });
+  try {
+    const { id } = req.query;
+    const foundProduct = await Product.findById(id).populate({
+      path: "author",
+    });
+    res.status(200).json(foundProduct);
+  } catch (err) {
+    console.log(err);
+    res.status(400).json("Something Went Wrong!");
+  }
 };
 
-module.exports.selectCategory = async (req, res) => {
-  res.render("products/selectCategory", { title: "Select Category" });
-};
+// module.exports.selectCategory = async (req, res) => {
+//   res.render("products/selectCategory", { title: "Select Category" });
+// };
 
-module.exports.renderNewProduct = async (req, res) => {
-  res.render("products/newProduct", { title: "New Product" });
-};
-
-module.exports.getProduct = async (req, res) => {
-  const { count } = req.query;
-  // console.log(count);
-  const products = await Product.aggregate([{ $sample: { size: 3 } }]);
-  res.status(200).json({ products });
-};
+// module.exports.renderNewProduct = async (req, res) => {
+//   res.render("products/newProduct", { title: "New Product" });
+// };
 
 module.exports.newProduct = async (req, res) => {
   const product = new Product(req.body.product);
@@ -71,14 +72,14 @@ module.exports.productDetails = async (req, res) => {
   });
 };
 
-module.exports.renderLock = async (req, res) => {
-  const { id } = req.query;
-  const product = await Product.findById(id);
-  res.render("products/lockConfirmation", {
-    product,
-    title: "Confirm",
-  });
-};
+// module.exports.renderLock = async (req, res) => {
+//   const { id } = req.query;
+//   const product = await Product.findById(id);
+//   res.render("products/lockConfirmation", {
+//     product,
+//     title: "Confirm",
+//   });
+// };
 
 module.exports.LockConfirm = async (req, res) => {
   const { bid, description } = req.body;
@@ -196,14 +197,14 @@ module.exports.LockConfirm = async (req, res) => {
   }
 };
 
-module.exports.report = async (req, res) => {
-  const { id } = req.query;
-  const product = await Product.findById(id);
-  res.render("products/reportProduct", { product, title: "Report!!" });
-};
+// module.exports.report = async (req, res) => {
+//   const { id } = req.query;
+//   const product = await Product.findById(id);
+//   res.render("products/reportProduct", { product, title: "Report!!" });
+// };
 
-module.exports.search = async (req, res) => {
-  const search = req.body.search;
-  const products = await Product.findOne({});
-  res.render("products/search", { search, products, title: "Search" });
-};
+// module.exports.search = async (req, res) => {
+//   const search = req.body.search;
+//   const products = await Product.findOne({});
+//   res.render("products/search", { search, products, title: "Search" });
+// };
