@@ -3,6 +3,7 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 const express = require("express");
+const cors = require('cors');
 const path = require("path");
 const mongoose = require("mongoose");
 const ejsMate = require("ejs-mate");
@@ -32,6 +33,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "public")));
+app.use(cors({
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
 
 const secret = process.env.SECRET || "thisshouldbeabettersecret!";
 
