@@ -1,21 +1,23 @@
+import { express, Request, Response, NextFunction } from "./import";
+import { Express } from "express";
+import { mongoose } from "./import";
+import cors from "cors";
+import path from "path";
+import session from "express-session";
+import methodOverride from "method-override";
+import MongoDBStore from "connect-mongo";
+const ejsMate = require("ejs-mate");
+
+import userRoutes from "./routes/users";
+import productRoutes from "./routes/products";
+// const Product = require("./models/product");
+
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 }
 
-// const express = require("express");
-import express, { Express, Request, Response} from 'express';
-import dotenv from 'dotenv';
-const cors = require('cors');
-const path = require("path");
-const mongoose = require("mongoose");
-const ejsMate = require("ejs-mate");
-// const flash = require("connect-flash");
-const methodOverride = require("method-override");
-const Product = require("./models/product");
-const userRoutes = require("./routes/users");
-const productRoutes = require("./routes/products");
-const dbUrl = process.env.DB_URL || "mongodb+srv://AasPaas:FGLXePdbZCgDfyKq@aaspaas.dtckjdy.mongodb.net/?retryWrites=true&w=majority";
-const MongoDBStore = require("connect-mongo");
+const app: Express = express();
+const dbUrl = process.env.DB_URL || "Your DB Url";
 
 mongoose
   .connect(dbUrl)
@@ -26,7 +28,6 @@ mongoose
     console.log("mongo error");
   });
 
-const app: Express = express();
 app.engine("ejs", ejsMate);
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -35,66 +36,51 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "public")));
-app.use(cors({
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
+app.use(
+  cors({
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 
-
-const secret = process.env.SECRET || "thisshouldbeabettersecret!";
-
-const Mongo_store = MongoDBStore.create({
+const MongoStore = MongoDBStore.create({
   mongoUrl: dbUrl,
-  secret,
   touchAfter: 24 * 60 * 60,
 });
 
 app.use(
-  require("express-session")({
-    store: Mongo_store,
+  session({
+    store: MongoStore,
     name: "session",
-    secret, //This is the secret used to sign the session ID cookie.
+    secret: process.env.SECRET || "thisshouldbeabettersecret!",
     resave: false,
     saveUninitialized: false,
     cookie: {
       httpOnly: true,
-      expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
+      expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 7),
       maxAge: 1000 * 60 * 60 * 24 * 7,
     },
   })
 );
 
-// app.use(flash());
+const logs: string[] = [];
 
-// app.use((req, res, next) => {
-//   res.locals.currentUser = req.user;
-//   res.locals.success = req.flash("success");
-//   res.locals.error = req.flash("error");
-//   next();
-// });
-
-function getMultipleRandom(arr: Array<number>, num: number) {
-  const shuffled = [...arr].sort(() => 0.5 - Math.random());
-  return shuffled.slice(0, num);
-}
+app.use((req: Request, res: Response, next: NextFunction) => {
+  const now = new Date();
+  const istDateTime = now.toLocaleString("en-IN");
+  const logEntry = `[${istDateTime}] ${req.method} ${req.url}`;
+  logs.push(logEntry);
+  next();
+});
 
 app.use("/api/users", userRoutes);
 app.use("/api/products", productRoutes);
 
 app.get("/", async (req: Request, res: Response) => {
-  const products = await Product.find({});
-  const sortProd = await Product.find().sort({ price: 1 });
-  const topDeals = sortProd.slice(0, 12);
-  const recentProds = products.slice(-3);
-  const trendings = getMultipleRandom(products, 3);
-  const freshers = getMultipleRandom(products, 6);
-  res.render("home", {
-    trendings,
-    freshers,
-    topDeals,
-    products,
-    recentProds,
-    title: "Home Page",
-  });
+  res.send("home");
+});
+
+app.get("/logs", (req: Request, res: Response) => {
+  res.render("log", { logs });
 });
 
 app.all("*", (req: Request, res: Response) => {

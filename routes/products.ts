@@ -1,11 +1,9 @@
-const express = require("express");
-const router = express.Router();
-// const passport = require("passport");
+import { router } from "../import";
+import { getProducts, renderProduct } from "../controllers/products";
 // const catchAsync = require("../utils/catchAsync");
 // const User = require("../models/user");
 // const users = require("../controllers/users");
 // const Product = require("../models/product");
-const products = require("../controllers/products");
 // const multer = require("multer");
 // const { storage } = require("../cloudinary");
 // const upload = multer({ storage });
@@ -17,9 +15,10 @@ const products = require("../controllers/products");
 //   isRegistered,
 // } = require("../middleware");
 
-router.route("/").get(products.getProducts);
+router.route("/").get(getProducts);
 
-router.route("/eachProduct").get(products.renderProduct);
+router.route("/eachProduct").get(renderProduct);
+
 // .post(isLoggedIn, upload.array("image"), catchAsync(products.renderProduct));
 // .post(
 //   isLoggedIn,
@@ -62,4 +61,4 @@ router.route("/eachProduct").get(products.renderProduct);
 
 // router.route("/search").post(products.search);
 
-module.exports = router;
+export default router;

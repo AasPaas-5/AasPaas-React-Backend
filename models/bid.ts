@@ -1,5 +1,4 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+import { Schema, model, InferSchemaType } from "../import";
 
 const BidSchema = new Schema({
   value: {
@@ -19,4 +18,6 @@ const BidSchema = new Schema({
   },
 });
 
-module.exports = mongoose.model("Bid", BidSchema);
+type Bid = InferSchemaType<typeof BidSchema>;
+
+export default model<Bid>("Bid", BidSchema);

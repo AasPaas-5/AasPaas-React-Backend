@@ -1,25 +1,23 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
-const { cloudinary } = require("../cloudinary");
+import { Schema, model, InferSchemaType } from "../import";
 
 const ImageSchema = new Schema({
   url: String,
   filename: String,
 });
 
-ImageSchema.virtual("sizing").get(function () {
-  return this.url.replace(
-    "/upload",
-    "/upload/w_183,h_178/q_auto:good/fl_any_format"
-  );
-});
+// ImageSchema.virtual("sizing").get(function () {
+//   return this.url.replace(
+//     "/upload",
+//     "/upload/w_183,h_178/q_auto:good/fl_any_format"
+//   );
+// });
 
-ImageSchema.virtual("Eachsizing").get(function () {
-  return this.url.replace(
-    "/upload",
-    "/upload/w_360,h_302/q_auto:good/fl_any_format"
-  );
-});
+// ImageSchema.virtual("Eachsizing").get(function () {
+//   return this.url.replace(
+//     "/upload",
+//     "/upload/w_360,h_302/q_auto:good/fl_any_format"
+//   );
+// });
 
 const ProductSchema = new Schema({
   title: {
@@ -86,4 +84,6 @@ const ProductSchema = new Schema({
 //   }
 // });
 
-module.exports = mongoose.model("Product", ProductSchema);
+type Product = InferSchemaType<typeof ProductSchema>;
+
+export default model<Product>("Product", ProductSchema);
