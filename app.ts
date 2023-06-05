@@ -2,17 +2,19 @@ if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 }
 
-const express = require("express");
+// const express = require("express");
+import express, { Express, Request, Response} from 'express';
+import dotenv from 'dotenv';
 const cors = require('cors');
 const path = require("path");
 const mongoose = require("mongoose");
 const ejsMate = require("ejs-mate");
-const flash = require("connect-flash");
+// const flash = require("connect-flash");
 const methodOverride = require("method-override");
 const Product = require("./models/product");
 const userRoutes = require("./routes/users");
 const productRoutes = require("./routes/products");
-const dbUrl = process.env.DB_URL;
+const dbUrl = process.env.DB_URL || "mongodb+srv://AasPaas:FGLXePdbZCgDfyKq@aaspaas.dtckjdy.mongodb.net/?retryWrites=true&w=majority";
 const MongoDBStore = require("connect-mongo");
 
 mongoose
@@ -20,11 +22,11 @@ mongoose
   .then(() => {
     console.log("Mongo Is Running");
   })
-  .catch((err) => {
+  .catch(() => {
     console.log("mongo error");
   });
 
-const app = express();
+const app: Express = express();
 app.engine("ejs", ejsMate);
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -61,16 +63,16 @@ app.use(
   })
 );
 
-app.use(flash());
+// app.use(flash());
 
-app.use((req, res, next) => {
-  res.locals.currentUser = req.user;
-  res.locals.success = req.flash("success");
-  res.locals.error = req.flash("error");
-  next();
-});
+// app.use((req, res, next) => {
+//   res.locals.currentUser = req.user;
+//   res.locals.success = req.flash("success");
+//   res.locals.error = req.flash("error");
+//   next();
+// });
 
-function getMultipleRandom(arr, num) {
+function getMultipleRandom(arr: Array<number>, num: number) {
   const shuffled = [...arr].sort(() => 0.5 - Math.random());
   return shuffled.slice(0, num);
 }
@@ -78,7 +80,7 @@ function getMultipleRandom(arr, num) {
 app.use("/api/users", userRoutes);
 app.use("/api/products", productRoutes);
 
-app.get("/", async (req, res) => {
+app.get("/", async (req: Request, res: Response) => {
   const products = await Product.find({});
   const sortProd = await Product.find().sort({ price: 1 });
   const topDeals = sortProd.slice(0, 12);
@@ -95,7 +97,7 @@ app.get("/", async (req, res) => {
   });
 });
 
-app.all("*", (req, res, next) => {
+app.all("*", (req: Request, res: Response) => {
   res.status(404).render("404", { title: "Error" });
 });
 
